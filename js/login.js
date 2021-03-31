@@ -55,7 +55,9 @@ $('#form_login').on('submit', function(e) {
             if (res.status != 0)
                 return layer.msg(res.message);
             layer.msg(res.message);
-            // 登陆成功后，跳转到主页
+            // 要把登陆信息存储起来，以便与之后的使用
+            window.localStorage.setItem('token', res.token)
+                // 登陆成功后，跳转到主页
             window.location.href = '../index.html'
         }
     })

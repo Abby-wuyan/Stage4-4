@@ -6,10 +6,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大事件管理后台</title>
+    <link rel="stylesheet" href="lib/allBase.css">
+    <link rel="stylesheet" href="lib/layui/layui/css/layui.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
 </head>
 
-<body>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <img src="images/logo.png" alt="" />
+            </div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="userinfo">
+                        <!-- 头像 -->
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+                        <!-- 当用户默认没有头像，我们自己给它弄一个首字母的头像 -->
+                        <span class="text-avatar">A</span> 个人中心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">更换头像</a></dd>
+                        <dd><a href="">重置密码</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <!-- 因为退出按钮点击后不是直接退出的，还会进一步咨询用户是否确定要退出 -->
+                    <!-- 所以给这个退出链接直接加阻止 -->
+                    <a href="javascript:;" id='btn-logout'><span class="iconfont icontuichu"></span>退出</a>
+                </li>
+            </ul>
+        </div>
 
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 用户信息 -->
+                <!-- 把上面复制过来的a链接改成div -->
+                <div class="userinfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+                    <!-- 当用户默认没有头像，我们自己给它弄一个首字母的头像 -->
+                    <span class="text-avatar">A</span>
+                    <span id="welcome">欢迎 ***</span>
+                </div>
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <!-- layui-shrink 是导航的基础属性，详情看layui官网，控制收缩子菜单-->
+                <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+                    <li class="layui-nav-item layui-this">
+                        <!-- layui-this是默认指定选项的样式 -->
+                        <!-- 新知识，target结合iframe的name -->
+                        <a href="login.html" target="fm"><span class="iconfont iconshouye"></span>首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <!-- <li class="layui-nav-item layui-nav-itemed"> -->
+                        <!-- layui-nav-itemed刷新就展开子菜单 -->
+                        <a class="" href="javascript:;"><span class="iconfont icon16"></span>文章管理</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发布文章</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><span class="iconfont iconyonghu"></span>个人中心</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <!-- 新知识，iframe是个载体。一定要加name，结合a链接的target使用 -->
+            <iframe name="fm" src="login.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © www.itheima.com - 黑马程序员
+        </div>
+    </div>
+    <!-- 导入 layui 的JS文件 -->
+    <script src="lib/layui/layui/layui.all.js"></script>
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <!-- 因为调用了jquery,所以要放在它后面 -->
+    <script src="js/baseApi.js"></script>
+    <script src="js/index.js"></script>
 </body>
+
 
 </html>
