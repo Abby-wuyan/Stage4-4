@@ -54,14 +54,16 @@ function renderAvatar(user) {
     // 优先获取用户的昵称
     var name = user.nickname || user.username;
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name);
+    console.log('输出用户信息');
+    console.log(user);
     // 获取首字母
     if (user.user_pic == null) {
         // 如果用户本身没有头像，只能设置文本头像
-        $('.text-avatar').html(name[0].toUpperCase()).siblings('img').hide();
+        $('.text-avatar').html(name[0].toUpperCase()).show().siblings('img').hide();
         // $('.layui-nav-item .text-avatar').html(name[0].toUpperCase()).siblings('img').hide();
 
     } else {
-        $('.userinfo img').attr('src', user.user_pic).siblings('.text-avatar').hide();
+        $('.userinfo img').attr('src', user.user_pic).show().siblings('.text-avatar').hide();
     }
 }
 
