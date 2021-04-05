@@ -48,11 +48,14 @@ $('#btn-upload').on('click', function() {
     $.ajax({
         url: '/my/update/avatar',
         type: 'POST',
-        data: { avavatar: dataURL },
+        data: { avatar: dataURL },
         success: function(res) {
-            if (res.status != 0) return layer.msg(res.message);
+            console.log('1');
+            if (res.status != 0) { return layer.msg(res.message) }
+            console.log('2');
             layer.msg(res.message);
             window.parent.getUserList();
+
         }
     })
 })

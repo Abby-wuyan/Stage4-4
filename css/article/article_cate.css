@@ -1,0 +1,16 @@
+body {
+    background-color: #f0f3f4;
+    padding: 10px;
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 弹出窗样式 */
+
+#form-add {
+    padding: 5px;
+}
